@@ -14,9 +14,8 @@ openai.api_key = api_key
 
 
 # Function to get a GPT response
-client = OpenAI(api_key=st.secrets["api_key"])
 def get_gpt_response(question):
-    completion = client.chat.completions.create(
+    completion = openai.chat.completions.create(
         model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are a magic 8-ball. Respond to questions with brief, concise spooky and mean answers."},
